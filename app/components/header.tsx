@@ -38,9 +38,6 @@ export default function Header() {
           </Link>
         </li>
         <li className="text-white text-2xl">
-          <p>
-            Help <span>{san}</span>
-          </p>
           <button
             onClick={() => (san = 2)}
             className="bg-blue-500 text-white px-2 py-1 rounded ml-2"
@@ -49,9 +46,6 @@ export default function Header() {
           </button>
         </li>
         <li className="text-white text-2xl">
-          <p>
-            Help <span>{count}</span>
-          </p>
           <button
             onClick={() => setCount(2)}
             className="bg-blue-500 text-white px-2 py-1 rounded ml-2"
