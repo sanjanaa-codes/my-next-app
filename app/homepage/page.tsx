@@ -8,7 +8,6 @@ export default function HomePage() {
       <h1>Hello, I am Home Page!</h1>
       <ProductCard />
       {/* <Header /> */}
-     
     </>
   );
 }
