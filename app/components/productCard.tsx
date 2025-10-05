@@ -3,8 +3,26 @@
 import StarIcon from "@/public/icons/star";
 import Image from "next/image";
 import DeliveryInfo from "./deliveryInfo";
+import Plus from "@/public/icons/plus";
+import TrashIcon from "@/public/icons/trash";
+import Cart from "@/public/icons/cart";
+import { useState } from "react";
 
 export default function ProductCard() {
+  const [showControls, setShowControls] = useState(false);
+  const [count, setCount] = useState(1);
+
+  const handlePlus = () => setCount((prev) => prev + 1);
+
+  const handleMinus = () => {
+    if (count > 1) {
+      setCount((prev) => prev - 1);
+    } else {
+      // If count is 1, show trash instead
+      setShowControls(false);
+      setCount(1);
+    }
+  };
   return (
     <div className="grid grid-cols-3 gap-8 px-12 mt-20">
       {Array(9)
@@ -72,6 +90,71 @@ export default function ProductCard() {
                     time="8 am - 5 pm"
                   /> */}
                 </div>
+              </div>
+              {/* <Cart size={20} className="mt-5 cursor-pointer" />
+              <div className="flex items-center gap-4 mt-2">
+                <Image
+                  src="/images/minus.png"
+                  alt="Minus Icon"
+                  width={80}
+                  height={20}
+                  className="h-5 w-auto cursor-pointer"
+                />
+                <TrashIcon size={20} fill="#000" className="cursor-pointer" />
+
+                <Plus size={20} className="cursor-pointer" />
+              </div> */}
+              <div className="flex flex-col items-center">
+                {/* Cart icon */}
+                <button onClick={() => setShowControls((prev) => !prev)}>
+                <Cart
+                  size={24}
+                  className="mt-5 cursor-pointer"
+                />
+                </button>
+                
+
+                {/* Controls (appear when cart clicked) */}
+                {showControls && (
+                  <div className="flex items-center gap-4 mt-2">
+                    {count === 1 ? (
+                      <button onClick={() => setShowControls(false)}>
+                        <TrashIcon
+                          size={22}
+                          className="cursor-pointer"
+                          
+                        />
+                      </button>
+                    ) : (
+                      <Image
+                        src="/images/minus.png"
+                        alt="Minus Icon"
+                        width={80}
+                        height={20}
+                        className="h-5 w-auto cursor-pointer"
+                        onClick={handleMinus}
+                      />
+                    )}
+                    ) : (
+                      <Image
+                        src="/images/minus.png"
+                        alt="Minus Icon"
+                        width={80}
+                        height={20}
+                        className="h-5 w-auto cursor-pointer"
+                        onClick={handleMinus}
+                      />
+                    )}
+
+                    <p className="text-base font-semibold">{count}</p>
+                    <button onClick={handlePlus}><Plus
+                      size={22}
+                      className="cursor-pointer"
+                      
+                    /></button>
+                    
+                  </div>
+                )}
               </div>
             </div>
           </div>
