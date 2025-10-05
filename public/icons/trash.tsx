@@ -8,7 +8,6 @@ export default function TrashIcon({
   size = 20,
   fill = '#000000',
   className='',
-  onClick
 }: Readonly<TrashIconProps>) {
   return (
     <svg
