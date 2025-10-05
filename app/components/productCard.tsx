@@ -2,6 +2,7 @@
 
 import StarIcon from "@/public/icons/star";
 import Image from "next/image";
+import DeliveryInfo from "./deliveryInfo";
 
 export default function ProductCard() {
   return (
@@ -9,6 +10,7 @@ export default function ProductCard() {
       {Array(9)
         .fill(0)
         .map((_, i) => (
+          // why  key
           <div key={i}>
             <Image
               key={i}
@@ -20,6 +22,7 @@ export default function ProductCard() {
             />
             <div>
               <h5 className="text-base font-normal mt-2">RE Weather Jacket</h5>
+              {/* truncate */}
               <p className="text-gray-600 truncate text-base font-medium mt-1">
                 Prestige Omega Select Plus 27.5cm Non-Stick Omni Tawa |Induction
                 Base |Gas & Induction Compatible| Metal Spoon Friendly | Sturdy
@@ -27,6 +30,7 @@ export default function ProductCard() {
               </p>
               <div className="flex items-center gap-2 mt-2">
                 <span className="text-gray-600 text-sm font-medium">4.1</span>
+                {/* this method */}
                 {Array(5)
                   .fill(0)
                   .map((_, i) => (
@@ -38,7 +42,36 @@ export default function ProductCard() {
                       className="mb-1"
                     />
                   ))}
-                <span className="text-gray-600 text-sm font-medium">1,234</span>
+                <span className="text-gray-500 text-sm font-medium">1,234</span>
+              </div>
+              {/* items-baseline */}
+              <div className="flex items-baseline space-x-2 mb-1">
+                <p className="text-xl font-semibold text-gray-900">
+                  {/* align-text-top align-super */}
+                  <span className="text-xs align-text-top">₹</span>265
+                  <span className="text-sm align-super">00</span>
+                </p>
+                <p className="text-sm text-gray-500">
+                  M.R.P: {/* {" "} */}
+                  {/* line-through */}
+                  <span className="line-through text-gray-500">₹599</span>
+                </p>
+              </div>
+              <div className="flex gap-1">
+                <p className="text-sm text-gray-900 font-medium">
+                  FREE Delivery
+                </p>
+                {/* <p className="text-sm font-semibold text-gray-900">Wed, 8 October</p> */}
+                <div className="space-y-2">
+                  {/* <DeliveryInfo type="single" date="Wed, 8 October" />
+                  <DeliveryInfo type="range" date="8" endDate="12 Oct" />
+                  <DeliveryInfo type="prime" /> */}
+                  <DeliveryInfo
+                    type="scheduled"
+                    date="8 Oct"
+                    time="8 am - 5 pm"
+                  />
+                </div>
               </div>
             </div>
           </div>
