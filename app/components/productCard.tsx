@@ -63,14 +63,14 @@ export default function ProductCard() {
                 </p>
                 {/* <p className="text-sm font-semibold text-gray-900">Wed, 8 October</p> */}
                 <div className="space-y-2">
-                  {/* <DeliveryInfo type="single" date="Wed, 8 October" />
-                  <DeliveryInfo type="range" date="8" endDate="12 Oct" />
-                  <DeliveryInfo type="prime" /> */}
-                  <DeliveryInfo
+                  {/* <DeliveryInfo type="single" date="Wed, 8 October" /> */}
+                  {/* <DeliveryInfo type="range" date="8" endDate="12 Oct" /> */}
+                  <DeliveryInfo type="prime" />
+                  {/* <DeliveryInfo
                     type="scheduled"
                     date="8 Oct"
                     time="8 am - 5 pm"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
