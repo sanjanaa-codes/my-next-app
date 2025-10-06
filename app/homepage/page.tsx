@@ -7,6 +7,10 @@ export default function HomePage() {
   function handleClick() {
     setName("R J Sanjanaa");
   }
+  const [light, setLightOn] = useState(true);
+  function handleLight() {
+    setLightOn(prevLightOn => !prevLightOn);
+  }
   return (
     <>
       <ProductCard />
@@ -17,6 +21,7 @@ export default function HomePage() {
           {name}
         </button>
       </h3>
+      <button onClick={handleLight}>Click here {light ? "to turn off the light" : "to turn on the light"}</button>
     </>
   );
 }
