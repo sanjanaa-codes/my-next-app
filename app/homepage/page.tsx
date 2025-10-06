@@ -21,7 +21,9 @@ export default function HomePage() {
           {name}
         </button>
       </h3>
-      <button onClick={handleLight}>Click here {light ? "to turn off the light" : "to turn on the light"}</button>
+      <button onClick={handleLight} className="cursor-pointer rounded mt-4">
+        Click here {light ? "to turn off the light" : "to turn on the light"}
+      </button>
     </>
   );
 }
