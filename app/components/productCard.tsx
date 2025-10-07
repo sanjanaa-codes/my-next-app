@@ -62,40 +62,6 @@ export default function ProductCard() {
                     1,234
                   </span>
                 </div>
-                {/*  */}
-                <div>
-                  {/* Cart icon */}
-                  <button onClick={() => setShowControls((prev) => !prev)}>
-                    <Cart size={24} className="mt-1 cursor-pointer" />
-                  </button>
-
-                  {/* Controls */}
-                  {showControls && (
-                    <div className="flex items-center gap-4 mt-2">
-                      {count === 1 ? (
-                        <button onClick={() => setShowControls(false)}>
-                          <TrashIcon size={18} className="cursor-pointer" />
-                        </button>
-                      ) : (
-                        <Image
-                          src="/images/minus.png"
-                          alt="Minus Icon"
-                          width={80}
-                          height={20}
-                          className="h-5 w-auto cursor-pointer"
-                          onClick={handleMinus}
-                        />
-                      )}
-
-                      <p className="text-base font-semibold">{count}</p>
-
-                      <button onClick={handlePlus}>
-                        <Plus size={22} className="cursor-pointer" />
-                      </button>
-                    </div>
-                  )}
-                </div>
-                {/*  */}
               </div>
 
               <div className="flex items-baseline space-x-2 mb-1">
